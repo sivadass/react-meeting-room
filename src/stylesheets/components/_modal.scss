@@ -1,0 +1,42 @@
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.66);
+  visibility: hidden;
+  z-index: -1;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  &.active{
+    visibility: visible;
+    z-index: 100;
+  }
+}
+.modal-body{
+  width: 100%;
+  max-width: 600px;
+  border-radius: 3px;
+  background: $white;
+  margin: 16px;
+  padding: 16px;
+  position: relative;
+}
+.close{
+  display: block;
+  position: absolute;
+  width: 36px;
+  padding: 0;
+  margin: 0;
+  height: 36px;
+  top: -15px;
+  right: -15px;
+  line-height: 36px;
+  border-radius: 50%;
+  text-align: center;
+}

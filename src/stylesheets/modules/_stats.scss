@@ -1,0 +1,29 @@
+.stats{
+  padding: 24px 78px;
+  background: $blue;
+  color: $white;
+  display: flex;
+  display: -webkit-flex;
+  @media (max-width: 768px){
+		padding: 8px;
+	}
+}
+.total-expense{
+  flex-basis: 40%;
+  -webkit-flex-basis: 40%;
+  .total-expense-label{
+    font-size: 16px;
+    line-height: 16px;
+    color: $white;
+    text-transform: uppercase;
+  }
+  .total-expense-amount{
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 300;
+  }
+}
+.graph{
+  flex-basis: 60%;
+  -webkit-flex-basis: 60%;
+}
