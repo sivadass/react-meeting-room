@@ -1,4 +1,3 @@
 # React Meeting Room
 
-Project Under Development!!!
-Readme will be updated once the MVP is ready to use.
+A simple web app to book meeting rooms inside an office.
