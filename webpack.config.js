@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   watch: true,
-  context: path.resolve(__dirname, './src/js'),
+  context: path.resolve(__dirname, './src'),
   entry: {
     app: './index.js',
   },
@@ -19,9 +20,19 @@ module.exports = {
         query: {
           presets: ['es2015','react','stage-2']
         }
+      },
+      {
+        test: /\.scss?$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          loader: 'css-loader!sass-loader'
+        })
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ]
 };
 
 // Configuration refernce:
