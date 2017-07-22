@@ -2,16 +2,70 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 const css = require('./stylesheets/style.scss');
-
+var CLIENT_ID = '992549188018-3prg54pp18je3e3qhgcttgl11491c4dm.apps.googleusercontent.com';
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+var SCOPES = "https://www.googleapis.com/auth/calendar";
 class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAuthButton: false,
+      showSignOutButton: false
+    };
+    this.initClient = this.initClient.bind(this);
+    this.updateSigninStatus = this.updateSigninStatus.bind(this);
+  }
+  handleAuthClick(){
+    gapi.auth2.getAuthInstance().signIn();
+  }
+  handleSignoutClick(){
+    gapi.auth2.getAuthInstance().signOut();
+  }
+  handleClientLoad() {
+    gapi.load('client:auth2', this.initClient);
+  }
+  initClient(DISCOVERY_DOCS, CLIENT_ID, SCOPES) {
+    gapi.client.init({
+      discoveryDocs: DISCOVERY_DOCS,
+      clientId: CLIENT_ID,
+      scope: SCOPES
+    }).then(function () {
+      console.log(gapi);
+      // Listen for sign-in state changes.
+      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+      // Handle the initial sign-in state.
+      updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      authorizeButton.onclick = handleAuthClick;
+      signoutButton.onclick = handleSignoutClick;
+    });
+  }
+  updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+      this.setState({
+        showAuthButton: false,
+        showSignOutButton: true
+      })
+      //listUpcomingEvents();
+      //insertNewEvent();
+    } else {
+      this.setState({
+        showAuthButton: true,
+        showSignOutButton: false
+      })
+    }
+  }
   componentDidMount(){
-    const CALENDAR_ID = 'tb8ckdrm61bdsj6jfm7khob4u5@group.calendar.google.com'
-    const API_KEY = 'AIzaSyAOuDzSlG24RPBn3OKVAyjW3OK_EJhCUbp'
-    let url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}`
+    this.handleClientLoad();
   }
   render(){
+    let authButton = <button id="authorize-button" onClick={this.handleAuthClick.bind(this)}>Authorize</button>
+    let signOutButton = <button id="signout-button" onClick={this.handleSignoutClick.bind(this)}>Sign Out</button>
     return(
-      <h1>Hi</h1>
+      <div className="container">
+        {this.state.showAuthButton ? authButton : null}
+        {this.state.showSignOutButton ? signOutButton : null}
+      </div>
     )
   }
 }
