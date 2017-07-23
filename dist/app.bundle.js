@@ -11328,6 +11328,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var css = __webpack_require__(89);
 
+var CLIENT_ID = '992549188018-3prg54pp18je3e3qhgcttgl11491c4dm.apps.googleusercontent.com';
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+var SCOPES = "https://www.googleapis.com/auth/calendar";
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -11336,9 +11340,6 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    var CLIENT_ID = '992549188018-3prg54pp18je3e3qhgcttgl11491c4dm.apps.googleusercontent.com';
-    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-    var SCOPES = "https://www.googleapis.com/auth/calendar";
     _this.state = {
       showAuthButton: false,
       showSignOutButton: false
@@ -11365,7 +11366,7 @@ var App = function (_React$Component) {
     }
   }, {
     key: 'initClient',
-    value: function initClient(DISCOVERY_DOCS, CLIENT_ID, SCOPES) {
+    value: function initClient() /****here you've had parameters that made config vars unaccessible*****/{
       gapi.client.init({
         discoveryDocs: DISCOVERY_DOCS,
         clientId: CLIENT_ID,
@@ -11373,12 +11374,16 @@ var App = function (_React$Component) {
       }).then(function () {
         console.log(window.gapi);
         // Listen for sign-in state changes.
-        window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+        // ************* to access instance method you have to use `this.updateSigninStatus`  
+        window.gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
         // Handle the initial sign-in state.
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        authorizeButton.onclick = handleAuthClick;
-        signoutButton.onclick = handleSignoutClick;
+
+        // **************this code is unnecessary and causes errors***** 
+        // authorizeButton.onclick = handleAuthClick;
+        // signoutButton.onclick = handleSignoutClick;
       });
     }
   }, {

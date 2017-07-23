@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 const css = require('./stylesheets/style.scss');
+
 var CLIENT_ID = '992549188018-3prg54pp18je3e3qhgcttgl11491c4dm.apps.googleusercontent.com';
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 var SCOPES = "https://www.googleapis.com/auth/calendar";
+
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -24,20 +26,24 @@ class App extends React.Component{
   handleClientLoad() {
     gapi.load('client:auth2', this.initClient);
   }
-  initClient(DISCOVERY_DOCS, CLIENT_ID, SCOPES) {
+  initClient(/****here you've had parameters that made config vars unaccessible*****/) {
     gapi.client.init({
       discoveryDocs: DISCOVERY_DOCS,
       clientId: CLIENT_ID,
       scope: SCOPES
     }).then(function () {
-      console.log(gapi);
+      console.log(window.gapi);
       // Listen for sign-in state changes.
-      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+      // ************* to access instance method you have to use `this.updateSigninStatus`  
+      window.gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
       // Handle the initial sign-in state.
       updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      authorizeButton.onclick = handleAuthClick;
-      signoutButton.onclick = handleSignoutClick;
+
+      // **************this code is unnecessary and causes errors***** 
+      // authorizeButton.onclick = handleAuthClick;
+      // signoutButton.onclick = handleSignoutClick;
     });
   }
   updateSigninStatus(isSignedIn) {
