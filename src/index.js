@@ -5,6 +5,9 @@ const css = require('./stylesheets/style.scss');
 class App extends React.Component{
   componentWillMount(){
     function start() {
+      // Refernce URL
+      // https://developers.google.com/api-client-library/javascript/start/start-js
+
       // 2. Initialize the JavaScript client library.
       gapi.client.init({
         'apiKey': '992549188018',
