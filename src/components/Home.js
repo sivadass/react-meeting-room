@@ -7,8 +7,8 @@ import styles from './Home.scss'
 
 const calendars = [
   {
-    name: 'Conference Room',
-    url: 'kobster.com_6tpj49o82fscisu12i2fsic74k@group.calendar.google.com'
+    name: 'Meeting Room',
+    url: 'psdueq5a33so3e17updn7ot394@group.calendar.google.com'
   }
 ]
 const dailyRecurrence = 100
