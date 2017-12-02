@@ -1,3 +1,16 @@
 .container{
-    //padding: 0 64px;
+    padding: 32px;
+}
+
+.list-group-item{
+    display: block;
+    padding: 8px;
+    color: #4099ff;
+    border-bottom: 1px solid #ccc;
+    &:hover{
+        background: rgba(0,0,0,0.1);
+    }
+    .badge{
+        color: rgb(180, 11, 11);
+    }
 }

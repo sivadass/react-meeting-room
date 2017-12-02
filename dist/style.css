@@ -1,3 +1,7 @@
+.event-item {
+  display: block;
+  padding: 8px 16px;
+  color: #4099ff; }
 * {
   margin: 0;
   padding: 0;
@@ -437,3 +441,16 @@ header {
   height: 40px;
   background: #2196f3;
   color: #ffffff; }
+
+.container {
+  padding: 32px; }
+
+.list-group-item {
+  display: block;
+  padding: 8px;
+  color: #4099ff;
+  border-bottom: 1px solid #ccc; }
+  .list-group-item:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  .list-group-item .badge {
+    color: #b40b0b; }

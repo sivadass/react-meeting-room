@@ -1,0 +1,41 @@
+:local {
+  .docs-container {
+    padding: 20px 40px;
+
+    .section {
+      padding: 20px 0;
+      border-bottom: 1px solid #cbcbcb;
+
+      .title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .section-body {
+        font-size: 16px;
+      }
+      .subtitle {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+      .issue {
+
+      }
+    }
+
+    .link {
+
+    }
+
+    .code {
+      background-color: #fff;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  }
+
+  li {
+    line-height: 24px;
+  }
+}
