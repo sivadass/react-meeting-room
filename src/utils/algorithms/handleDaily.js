@@ -1,4 +1,5 @@
-import moment from 'moment'
+// import moment from 'moment'
+import * as moment from 'moment-mini'
 
 /*
  * Handles events that occur every 'n' number of days

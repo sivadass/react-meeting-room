@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import moment from 'moment'
+// import moment from 'moment'
+import * as moment from 'moment-mini'
 
 import { GOOGLE_API_KEY } from '../config.js'
 import GoogleCalendar from '../utils/GoogleCalendar'

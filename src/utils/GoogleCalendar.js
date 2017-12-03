@@ -1,6 +1,6 @@
 import axios from 'axios'
-import * as Promise from 'bluebird'
-import moment from 'moment'
+//import * as Promise from 'bluebird'
+import * as Promise from 'es6-promise'
 
 import { handleDaily, handleDateOfMonth, handleDayOfMonth, handleWeekly } from './algorithms'
 
