@@ -1,14 +1,21 @@
 .container{
     padding: 32px;
+    @media (max-width: 480px){
+        padding: 16px;
+    }
 }
 
 .list-group-item{
     display: block;
-    padding: 8px;
+    padding: 16px 4px;
     color: #4099ff;
-    border-bottom: 1px solid #ccc;
+    line-height: 22px;
+    border-bottom: 1px solid #eee;
     &:hover{
-        background: rgba(0,0,0,0.1);
+        background: rgba(0,0,0,0.085);
+    }
+    &:last-child{
+        border-bottom: 0;
     }
     .badge{
         color: rgb(180, 11, 11);

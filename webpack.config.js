@@ -11,14 +11,20 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
   },
+  devtool: 'source-map',
+  resolve: {
+    alias: {
+      moment: 'moment/src/moment'
+    },
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015','react','stage-2']
+          presets: ['env','react','stage-2']
         }
       },
       {
@@ -27,15 +33,19 @@ module.exports = {
           fallback: 'style-loader',
           loader: 'css-loader!sass-loader'
         })
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpg)$/,
+        loader: "file-loader"
       }
     ]
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/)
-    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, "/"),
+    //compress: true,
+    port: 9000
+  }
 };
-
-// Configuration refernce:
-// https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783

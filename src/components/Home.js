@@ -62,6 +62,7 @@ export default class Home extends Component {
     });
     return(
       <div className="container">
+        <h1>Upcoming Meetings</h1>
         <div className="list-group">
           {eventsList.length > 0 ? eventsList : "Loading events, please wait"}
         </div>
