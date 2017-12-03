@@ -15,12 +15,15 @@
     }
 }
 .current-status{
-    color: #fff;
+    color: $white;
     display: flex;
     align-items: center;
     padding: 64px;
     &.open{
-        background: rgb(32, 212, 32);
+        background: $green;
+    }
+    &.close{
+        background: $red;
     }
     h1{
         font-size: 120px;
@@ -65,7 +68,7 @@
         border-bottom: 0;
     }
     .badge{
-        color: rgb(180, 11, 11);
+        color: $red;
     }
 }
 .current-time{
