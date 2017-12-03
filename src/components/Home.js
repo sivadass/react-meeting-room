@@ -68,7 +68,7 @@ export default class Home extends Component {
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">
-            {moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}
+            {moment().format("dddd, Do MMMM, h:mm A")}
           </div>
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
