@@ -1,5 +1,5 @@
-// import moment from 'moment'
-import * as moment from 'moment-mini'
+import moment from 'moment'
+
 /*
  * Handles events that occur the same day of the month
  * (e.g. first Friday, last Monday)

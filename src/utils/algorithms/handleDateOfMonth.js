@@ -1,5 +1,5 @@
-// import moment from 'moment'
-import * as moment from 'moment-mini'
+import moment from 'moment'
+
 /*
  * Handles events that occure the same date of every month
  * (e.g. the 1st, the 8th)
