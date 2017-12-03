@@ -6,10 +6,11 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Inter UI', sans-serif;
-  //-webkit-font-smoothing: antialiased;
-  //-moz-font-smoothing: antialiased;
-	//-moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter UI', Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size: 18px;
 }
@@ -28,12 +29,6 @@ input[type="number"] {
 }
 strong{
   font-weight: 700;
-}
-#root{
-  background: #fff;
-  // width: 100%;
-  // max-width: 960px;
-  // margin: 0 auto;
 }
 ul{
   list-style-type: none;

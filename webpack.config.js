@@ -12,11 +12,6 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   devtool: 'source-map',
-  resolve: {
-    alias: {
-      moment: 'moment/src/moment'
-    },
-  },
   module: {
     rules: [
       {
@@ -42,6 +37,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   devServer: {
     contentBase: path.join(__dirname, "/"),
