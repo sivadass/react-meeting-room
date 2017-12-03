@@ -31,7 +31,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/)
+    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ]
 };
 

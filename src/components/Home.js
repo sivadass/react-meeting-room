@@ -3,7 +3,6 @@ import moment from 'moment'
 
 import { GOOGLE_API_KEY } from '../config.js'
 import GoogleCalendar from '../utils/GoogleCalendar'
-import styles from './Home.scss'
 
 const calendars = [
   {
