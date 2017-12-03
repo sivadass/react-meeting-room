@@ -18,6 +18,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      time: "",
       events: []
     }
   }
@@ -62,9 +63,17 @@ export default class Home extends Component {
     });
     return(
       <div className="container">
-        <h1>Upcoming Meetings</h1>
-        <div className="list-group">
-          {eventsList.length > 0 ? eventsList : "Loading events, please wait"}
+        <div className="current-status open">
+          <h1>OPEN</h1>
+        </div>
+        <div className="upcoming-meetings">
+          <div className="current-time">
+            {moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}
+          </div>
+          <h1>Upcoming Meetings</h1>
+          <div className="list-group">
+            {eventsList.length > 0 ? eventsList : "Loading events, please wait"}
+          </div>
         </div>
       </div>
     )

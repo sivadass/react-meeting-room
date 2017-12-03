@@ -1,12 +1,56 @@
 .container{
-    padding: 32px;
+    display: flex;
+    height: 100vh;
     @media (max-width: 480px){
-        padding: 16px;
+        display: block;
+        height: auto;
     }
 }
-h1{
-    margin-bottom: 32px;
-    text-align: center;
+
+.current-status,
+.upcoming-meetings{
+    flex-basis: 50%;
+    @media (max-width: 480px){
+        //padding: 16px;
+    }
+}
+.current-status{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 64px;
+    &.open{
+        background: rgb(32, 212, 32);
+    }
+    h1{
+        font-size: 120px;
+        line-height: 120px;
+    }
+    @media (max-width: 768px){
+        padding: 48px;
+        h1{
+            font-size: 90px;
+        }
+    }
+    @media (max-width: 480px){
+        padding: 32px;
+        h1{
+            font-size: 64px;
+        }
+    }
+}
+
+.upcoming-meetings{
+    padding: 64px;
+    @media (max-width: 768px){
+        padding: 48px;
+    }
+    @media (max-width: 480px){
+        padding: 32px;
+    }
+    h1{
+        margin: 0 0 24px 0;
+    }
 }
 .list-group-item{
     display: block;
@@ -23,4 +67,10 @@ h1{
     .badge{
         color: rgb(180, 11, 11);
     }
+}
+.current-time{
+    margin-top: 32px;
+    margin-bottom: 64px;
+    color: #999;
+    font-size: 24px;
 }
