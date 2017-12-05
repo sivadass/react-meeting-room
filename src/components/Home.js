@@ -18,7 +18,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      time: "",
+      time: moment().format("dddd, Do MMMM, h:mm A"),
       events: []
     }
   }
@@ -26,8 +26,14 @@ export default class Home extends Component {
   componentDidMount = () => {
     this.getGoogleCalendarEvents();
     console.log(this.state.events);
+    setInterval(this.tick, 1000);
   }
-
+  tick = () =>{
+    let time = moment().format("dddd, Do MMMM, h:mm A");
+    this.setState({
+      time: time
+    })
+  }
   getGoogleCalendarEvents = () => {
     /*
      * @param {string} GOOGLE_API_KEY - your Google API key
@@ -55,6 +61,7 @@ export default class Home extends Component {
       .catch(err => { throw new Error(err) })
   }
   render(){
+    let time = this.state.time;
     let events = this.state.events;
     let eventsList = events.map(function(event){
       return(
@@ -68,7 +75,7 @@ export default class Home extends Component {
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">
-            {moment().format("dddd, Do MMMM, h:mm A")}
+            {time}
           </div>
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
