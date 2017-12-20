@@ -1,2 +1,112 @@
-@font-face{font-family:Inter UI;font-style:normal;font-weight:400;src:url(19ef785020a451a0f750e1a2eb60b460.woff2) format("woff2"),url(de135c92662d8a15c63f151e564a7c05.woff) format("woff"),url(de5b543da1d4b52c9ab5454b518bb02f.ttf) format("ttf")}*{box-sizing:border-box}*,body{margin:0;padding:0}body{font-family:Inter UI,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:18px}button,input{font-family:inherit;font-size:inherit}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}strong{font-weight:700}ul{list-style-type:none}ul li{display:inline-block}a{text-decoration:none}.container{display:flex;height:100vh}@media (max-width:480px){.container{display:block;height:auto}}.current-status,.upcoming-meetings{flex-basis:50%}.current-status{color:#fff;display:flex;align-items:center;padding:64px}.current-status.open{background:#20d420}.current-status.busy{background:#ff5722}.current-status h1{font-size:120px;line-height:120px}@media (max-width:768px){.current-status{padding:48px}.current-status h1{font-size:90px}}@media (max-width:480px){.current-status{padding:32px}.current-status h1{font-size:64px}}.upcoming-meetings{padding:64px}@media (max-width:768px){.upcoming-meetings{padding:48px}}@media (max-width:480px){.upcoming-meetings{padding:32px}}.upcoming-meetings h1{margin:0 0 24px}.list-group-item{display:block;padding:16px 4px;color:#4099ff;line-height:22px;border-bottom:1px solid #eee}.list-group-item:hover{background:rgba(0,0,0,.085)}.list-group-item:last-child{border-bottom:0}.list-group-item .badge{color:#ff5722}.current-time{margin-top:32px;margin-bottom:64px;color:#999;font-size:24px}
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 400;
+  src: url(19ef785020a451a0f750e1a2eb60b460.woff2) format("woff2"), url(de135c92662d8a15c63f151e564a7c05.woff) format("woff"), url(de5b543da1d4b52c9ab5454b518bb02f.ttf) format("ttf"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter UI', Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 18px; }
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
+strong {
+  font-weight: 700; }
+
+ul {
+  list-style-type: none; }
+  ul li {
+    display: inline-block; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  display: flex;
+  height: 100vh; }
+  @media (max-width: 480px) {
+    .container {
+      display: block;
+      height: auto; } }
+
+.current-status,
+.upcoming-meetings {
+  flex-basis: 50%; }
+
+.current-status {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 64px; }
+  .current-status.open {
+    background: #20d420; }
+  .current-status.busy {
+    background: #FF5722; }
+  .current-status h1 {
+    font-size: 120px;
+    line-height: 120px; }
+  @media (max-width: 768px) {
+    .current-status {
+      padding: 48px; }
+      .current-status h1 {
+        font-size: 90px; } }
+  @media (max-width: 480px) {
+    .current-status {
+      padding: 32px; }
+      .current-status h1 {
+        font-size: 64px; } }
+
+.upcoming-meetings {
+  padding: 64px; }
+  @media (max-width: 768px) {
+    .upcoming-meetings {
+      padding: 48px; } }
+  @media (max-width: 480px) {
+    .upcoming-meetings {
+      padding: 32px; } }
+  .upcoming-meetings h1 {
+    margin: 0 0 24px 0; }
+
+.list-group-item {
+  display: block;
+  padding: 16px 4px;
+  color: #4099ff;
+  line-height: 22px;
+  border-bottom: 1px solid #eee; }
+  .list-group-item:hover {
+    background: rgba(0, 0, 0, 0.085); }
+  .list-group-item:last-child {
+    border-bottom: 0; }
+  .list-group-item .badge {
+    color: #FF5722; }
+
+.current-time {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  color: #999;
+  font-size: 30px; }
+
 /*# sourceMappingURL=style.css.map*/
