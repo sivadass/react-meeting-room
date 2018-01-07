@@ -75,7 +75,7 @@ export default class Home extends Component {
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">
-            {time}
+            {time}, 2018
           </div>
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
