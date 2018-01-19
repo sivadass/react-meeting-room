@@ -70,7 +70,7 @@ export default class Home extends Component {
     });
     return(
       <div className="container">
-        <div className="current-status busy">
+        <div className="current-status open">
           <h1>BUSY</h1>
         </div>
         <div className="upcoming-meetings">
