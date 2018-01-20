@@ -77,7 +77,7 @@ export default class Home extends Component {
           <div className="current-time">
             {time}, 2018
           </div>
-          <h1>Upcoming Meetings</h1>
+          <h2>Upcoming Meetings</h2>
           <div className="list-group">
             {eventsList.length > 0 ? eventsList : "Loading events, please wait"}
           </div>
