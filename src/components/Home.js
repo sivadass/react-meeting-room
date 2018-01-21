@@ -79,7 +79,7 @@ export default class Home extends Component {
           </div>
           <h2>Upcoming Meetings</h2>
           <div className="list-group">
-            {eventsList.length > 0 ? eventsList : "Loading meetings, please wait"}
+            {eventsList.length > 0 ? eventsList : "Loading upcoming meetingss, please wait"}
           </div>
         </div>
       </div>
