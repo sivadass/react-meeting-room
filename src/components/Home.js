@@ -30,9 +30,9 @@ export default class Home extends Component {
   }
   tick = () =>{
     let time = moment().format("dddd, Do MMMM, h:mm A");
-    this.setState({
-      time: time
-    })
+//this.setState({
+      //time: time
+   //s })
   }
   getGoogleCalendarEvents = () => {
     /*
