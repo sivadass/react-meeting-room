@@ -6,11 +6,11 @@ import GoogleCalendar from '../utils/GoogleCalendar'
 
 const calendars = [
   {
-    name: 'Meeting Room',
+    name: 'Meetings',
     url: 'psdueq5a33so3e17updn7ot394@group.calendar.google.com'
   }
 ]
-const dailyRecurrence = 80 // earlier it was 100
+const dailyRecurrence = 50 // earlier it was 100
 const weeklyRecurrence = 50
 const monthlyRecurrence = 10
 
@@ -30,9 +30,9 @@ export default class Home extends Component {
   }
   tick = () =>{
     let time = moment().format("dddd, Do MMMM, h:mm A");
-//this.setState({
-      //time: time
-   //s })
+    this.setState({
+      time: time
+    })
   }
   getGoogleCalendarEvents = () => {
     /*
