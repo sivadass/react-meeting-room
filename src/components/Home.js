@@ -18,7 +18,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      time: moment().format("dddd, Do MMMM, h:mm A"),
+      time: moment().format("dd, Do MMMM, h:mm A"),
       events: []
     }
   }

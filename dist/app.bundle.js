@@ -14920,7 +14920,7 @@ var Home = function (_Component) {
     };
 
     _this.state = {
-      time: (0, _moment2.default)().format("dddd, Do MMMM, h:mm A"),
+      time: (0, _moment2.default)().format("dd, Do MMMM, h:mm A"),
       events: []
     };
     return _this;
