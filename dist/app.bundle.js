@@ -14963,7 +14963,7 @@ var Home = function (_Component) {
             'div',
             { className: 'current-time' },
             time,
-            ', 2018'
+            ', 2019'
           ),
           _react2.default.createElement(
             'h2',
