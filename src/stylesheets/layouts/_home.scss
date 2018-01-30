@@ -11,7 +11,7 @@
 .upcoming-meetings{
     flex-basis: 50%;
     @media (max-width: 480px){
-        //padding: 16px;
+        padding: 16px;
     }
 }
 .current-status{
@@ -20,7 +20,7 @@
     align-items: center;
     padding: 64px;
     &.open{
-        background: $green;
+        background: lighten($green, 5%);
     }
     &.busy{
         background: $red;
