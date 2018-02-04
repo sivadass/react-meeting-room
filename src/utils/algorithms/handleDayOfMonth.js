@@ -18,7 +18,7 @@ const handleDayOfMonth = (calendar, recurrence, e) => {
   } else if ((date > 14) && (date <= 21)) {
     counter = 14
   } else if ((date > 21) && (date <= 28)) {
-    counter = 21
+    counter = 22
   } else {
     counter = 28
   }
