@@ -14963,12 +14963,17 @@ var Home = function (_Component) {
             'div',
             { className: 'current-time' },
             time,
-            ', 2019'
+            ', 2018'
           ),
           _react2.default.createElement(
             'h2',
             null,
             'Upcoming Meetings'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'All the best for your upcoming meetings'
           ),
           _react2.default.createElement(
             'div',
@@ -16128,7 +16133,7 @@ var handleDayOfMonth = function handleDayOfMonth(calendar, recurrence, e) {
   } else if (date > 14 && date <= 21) {
     counter = 14;
   } else if (date > 21 && date <= 28) {
-    counter = 21;
+    counter = 22;
   } else {
     counter = 28;
   }
