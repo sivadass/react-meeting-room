@@ -10,7 +10,7 @@ const calendars = [
     url: 'psdueq5a33so3e17updn7ot394@group.calendar.google.com'
   }
 ]
-const dailyRecurrence = 50 // earlier it was 100
+const dailyRecurrence = 100 // earlier it was 100
 const weeklyRecurrence = 50
 const monthlyRecurrence = 10
 

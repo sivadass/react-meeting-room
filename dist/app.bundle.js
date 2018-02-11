@@ -14863,7 +14863,7 @@ var calendars = [{
   name: 'Meetings',
   url: 'psdueq5a33so3e17updn7ot394@group.calendar.google.com'
 }];
-var dailyRecurrence = 50; // earlier it was 100
+var dailyRecurrence = 100; // earlier it was 100
 var weeklyRecurrence = 50;
 var monthlyRecurrence = 10;
 
