@@ -20,7 +20,7 @@
     align-items: center;
     padding: 64px;
     &.open{
-        background: lighten($green, 8%);
+        background: $green;
     }
     &.busy{
         background: $red;
