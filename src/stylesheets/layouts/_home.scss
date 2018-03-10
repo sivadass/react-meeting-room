@@ -20,10 +20,10 @@
     align-items: center;
     padding: 64px;
     &.open{
-        background: $green;
+        background: $red;
     }
     &.busy{
-        background: $red;
+        background: $green;
     }
     h1{
         font-size: 120px;

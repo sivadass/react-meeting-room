@@ -66,9 +66,9 @@ a {
   align-items: center;
   padding: 64px; }
   .current-status.open {
-    background: #7fd87f; }
-  .current-status.busy {
     background: #FF5722; }
+  .current-status.busy {
+    background: #7fd87f; }
   .current-status h1 {
     font-size: 120px;
     line-height: 120px; }
