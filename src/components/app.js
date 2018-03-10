@@ -33,7 +33,7 @@ export default class App extends Component {
           events
         }, ()=>{
           console.log(that.state.events);
-
+          that.setStatus();
         })
       }, function(reason) {
         console.log(reason);
@@ -49,11 +49,27 @@ export default class App extends Component {
     })
   }
 
+  setStatus = () =>{
+    let now = moment();
+    let events = this.state.events;
+    for (var e = 0; e < events.length; e++) {
+      var eventItem = events[e];
+      if (moment(now).isBetween(moment(eventItem.start.dateTime), moment(eventItem.end.dateTime))) {
+        this.setState({
+          isBusy: true
+        })
+      }
+  }
+
+    moment().isAfter();
+    moment().isBetween(moment-like, moment-like);
+  }
+
   render(){    
     const {time, events} = this.state;
     let eventsList = events.map(function(event){
       return(
-        <a className="list-group-item" href={event.glink} target="_blank" key={event.id}>{event.summary} <span className="badge">{moment(event.start.dateTime).format('MMMM Do YYYY, h:mm:ss a')}</span></a>
+        <a className="list-group-item" href={event.htmlLink} target="_blank" key={event.id}>{event.summary} <span className="badge">{moment(event.start.dateTime).format('h:mm a')}, {moment(event.end.dateTime).diff(moment(event.start.dateTime), 'minutes')} minutes, {moment(event.start.dateTime).format('MMMM Do')} </span></a>
       )
     });
     return(
