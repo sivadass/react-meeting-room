@@ -14,7 +14,10 @@ export default class App extends Component {
   }
 
   componentDidMount = () => {
-    setInterval(this.tick, 1000);
+    setInterval(() => {
+      this.tick();
+      this.setStatus();
+    }, 1000);
     this.getEvents();
   }
 
@@ -58,11 +61,12 @@ export default class App extends Component {
         this.setState({
           isBusy: true
         })
+      } else{
+        this.setState({
+          isBusy: false
+        })
       }
-  }
-
-    moment().isAfter();
-    moment().isBetween(moment-like, moment-like);
+    }
   }
 
   render(){    
