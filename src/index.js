@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Home from './components/Home'
+import App from './components/app'
 import './stylesheets/style.scss'
 
 render(
-  <Home />, 
+  <App />, 
   document.getElementById('root'),
   function(){
     let loader = document.getElementById('app-loader');
