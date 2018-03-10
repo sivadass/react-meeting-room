@@ -28285,9 +28285,7 @@ var App = function (_Component) {
       var that = this;
       function start() {
         gapi.client.init({
-          'apiKey': _config.GOOGLE_API_KEY,
-          'clientId': _config.CLIENT_ID,
-          'scope': 'calendar'
+          'apiKey': _config.GOOGLE_API_KEY
         }).then(function () {
           return gapi.client.request({
             'path': 'https://www.googleapis.com/calendar/v3/calendars/' + _config.CALENDAR_ID + '/events'

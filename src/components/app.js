@@ -21,9 +21,7 @@ export default class App extends Component {
     let that = this;
     function start() {
       gapi.client.init({
-        'apiKey': GOOGLE_API_KEY,
-        'clientId': CLIENT_ID,
-        'scope': 'calendar',
+        'apiKey': GOOGLE_API_KEY
       }).then(function() {
         return gapi.client.request({
           'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events`,
