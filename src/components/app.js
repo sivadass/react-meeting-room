@@ -8,7 +8,8 @@ export default class App extends Component {
     super(props)
     this.state = {
       time: moment().format("dd, Do MMMM, h:mm A"),
-      events: []
+      events: [],
+      isBusy: false
     }
   }
 
@@ -32,8 +33,8 @@ export default class App extends Component {
           events
         }, ()=>{
           console.log(that.state.events);
+
         })
-        console.log(events);
       }, function(reason) {
         console.log(reason);
       });
@@ -57,14 +58,14 @@ export default class App extends Component {
     });
     return(
       <div className="container">
-        <div className="current-status open">
-          <h1>BUSY</h1>
+        <div className={this.state.isBusy ? "current-status busy" : "current-status open"}>
+          <h1>{this.state.isBusy ? "BUSY" : "OPEN"}</h1>
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">
             {time}, 2018
           </div>
-          <h2>Upcoming Meetings</h2>
+          <h1>Upcoming Meetings</h1>
           <div className="list-group">
             {eventsList.length > 0 ? eventsList : "Loading..."}
           </div>

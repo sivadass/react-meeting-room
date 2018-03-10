@@ -66,9 +66,9 @@ a {
   align-items: center;
   padding: 64px; }
   .current-status.open {
-    background: #FF5722; }
-  .current-status.busy {
     background: #7fd87f; }
+  .current-status.busy {
+    background: #FF5722; }
   .current-status h1 {
     font-size: 120px;
     line-height: 120px; }
@@ -79,7 +79,7 @@ a {
         font-size: 90px; } }
   @media (max-width: 480px) {
     .current-status {
-      padding: 32px; }
+      padding: 24px; }
       .current-status h1 {
         font-size: 64px; } }
 
@@ -90,9 +90,12 @@ a {
       padding: 48px; } }
   @media (max-width: 480px) {
     .upcoming-meetings {
-      padding: 32px; } }
+      padding: 24px; } }
   .upcoming-meetings h1 {
     margin: 0 0 24px 0; }
+    @media (max-width: 480px) {
+      .upcoming-meetings h1 {
+        font-size: 32px; } }
 
 .list-group-item {
   display: block;
@@ -108,15 +111,18 @@ a {
     color: #FF5722; }
 
 .current-time {
-  margin-top: 32px;
-  margin-bottom: 64px;
+  margin: 32px 0 64px 0;
   color: #999;
   font-size: 30px; }
+  @media (max-width: 480px) {
+    .current-time {
+      font-size: 22px;
+      margin: 0 0 32px 0; } }
 
 .primary-cta {
-  position: absolute;
-  right: 64px;
-  bottom: 64px;
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
   background: #1976d3;
   border-radius: 4px;
   color: #ffffff;
@@ -127,5 +133,9 @@ a {
   text-align: center;
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  @media (max-width: 480px) {
+    .primary-cta {
+      right: 32px;
+      bottom: 32px; } }
 
 /*# sourceMappingURL=style.css.map*/

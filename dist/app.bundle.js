@@ -28274,7 +28274,8 @@ var App = function (_Component) {
 
     _this.state = {
       time: (0, _moment2.default)().format("dd, Do MMMM, h:mm A"),
-      events: []
+      events: [],
+      isBusy: false
     };
     return _this;
   }
@@ -28297,7 +28298,6 @@ var App = function (_Component) {
           }, function () {
             console.log(that.state.events);
           });
-          console.log(events);
         }, function (reason) {
           console.log(reason);
         });
@@ -28329,11 +28329,11 @@ var App = function (_Component) {
         { className: 'container' },
         _react2.default.createElement(
           'div',
-          { className: 'current-status open' },
+          { className: this.state.isBusy ? "current-status busy" : "current-status open" },
           _react2.default.createElement(
             'h1',
             null,
-            'BUSY'
+            this.state.isBusy ? "BUSY" : "OPEN"
           )
         ),
         _react2.default.createElement(
@@ -28346,7 +28346,7 @@ var App = function (_Component) {
             ', 2018'
           ),
           _react2.default.createElement(
-            'h2',
+            'h1',
             null,
             'Upcoming Meetings'
           ),
