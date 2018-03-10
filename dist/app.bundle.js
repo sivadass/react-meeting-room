@@ -28355,7 +28355,7 @@ var App = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'list-group' },
-            eventsList.length > 0 ? eventsList : "Loading upcoming meetings, please wait"
+            eventsList.length > 0 ? eventsList : "Loading..."
           ),
           _react2.default.createElement(
             'a',
