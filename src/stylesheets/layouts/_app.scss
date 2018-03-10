@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     @media (max-width: 480px){
         display: block;
         height: auto;
