@@ -103,3 +103,50 @@
         bottom: 32px;
     }
 }
+
+.list-group:empty {
+    margin: 30px 0;
+    width: 280px;
+    height: 200px; /* change height to see repeat-y behavior */
+    
+    background-image:
+        linear-gradient( 
+            100deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%, 
+            rgba(255, 255, 255, 0) 80% 
+        ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 );
+
+    background-repeat: repeat-y;
+
+    background-size:
+        50px 280px, /* highlight */
+        150px 280px,
+        350px 280px,
+        300px 280px,
+        250px 280px;
+
+    background-position:
+        0 0, /* highlight */
+        0px 0,
+        0px 40px,
+        0px 80px,
+        0px 120px;
+
+    animation: shine 1s infinite;
+	}
+
+	@keyframes shine {
+		to {
+			background-position:
+            100% 0, /* move highlight to right */
+            0px 0,
+            0px 40px,
+            0px 80px,
+            0px 120px;
+		}
+	}
