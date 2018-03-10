@@ -70,6 +70,7 @@ export default class App extends Component {
           <div className="list-group">
             {eventsList.length > 0 ? eventsList : "Loading upcoming meetings, please wait"}
           </div>
+          <a href="https://calendar.google.com/calendar?cid=c3FtMnVkaTFhZGY2ZHM3Z2o5aDgxdHVldDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank">ADD NEW MEETING</a>
         </div>
       </div>
     )
