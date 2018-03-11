@@ -9,18 +9,20 @@ export default class App extends Component {
     this.state = {
       time: moment().format("dd, Do MMMM, h:mm A"),
       events: [],
-      isBusy: false,
+      isBusy: true,
       isEmpty: false,
       isLoading: true
     }
   }
 
   componentDidMount = () => {
+    this.getEvents();
     setInterval(() => {
       this.tick();
-      this.setStatus();
     }, 1000);
-    this.getEvents();
+    setInterval(() => {
+      this.setStatus();
+    }, 5000);
   }
 
   getEvents(){
@@ -30,13 +32,15 @@ export default class App extends Component {
         'apiKey': GOOGLE_API_KEY
       }).then(function() {
         return gapi.client.request({
-          'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${moment().toISOString()}&timeMax=${moment().toISOString()}`,
+          'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${moment().toISOString()}&timeMax=${moment().endOf('day').toISOString()}`,
         })
       }).then( (response) => {
-        let events = response.result.items
+        let events = response.result.items;
+        let sortedEvents = events.sort(function(a, b) { return moment(b.start.dateTime).format('YYYYMMDD') - moment(a.start.dateTime).format('YYYYMMDD') });
+        console.log(sortedEvents);
         if(events.length > 0){
           that.setState({
-            events: events,
+            events: sortedEvents,
             isLoading: false,
             isEmpty: false
           }, ()=>{
@@ -69,6 +73,7 @@ export default class App extends Component {
     let events = this.state.events;
     for (var e = 0; e < events.length; e++) {
       var eventItem = events[e];
+      console.log(eventItem.start.dateTime);
       if (moment(now).isBetween(moment(eventItem.start.dateTime), moment(eventItem.end.dateTime))) {
         this.setState({
           isBusy: true

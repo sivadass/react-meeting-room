@@ -1,6 +1,16 @@
 # React Meeting Room
 
-A simple web app to book meeting rooms inside an office.
+A simple web app to book meeting room inside an office.
+
+![React Meeting Room]()
+
+## What this web-app can do for you?
+1.  This web-app will help you to allocate meeting room to all departments inside a company.
+2.  It uses google calendar API as backend, so the events can be created anywhere using Google Calendar APP or through Web.
+3.  Created events can be viewed from anywhere via desktop, tablet or mobile-phone.
+4.  The app will show you meeting room availability status instantly.  
+5.  You can view the list of all meetings scheduled for the day in a easily graspable view.
+
 
 ## Live Demo 
 [https://sivadass.github.io/react-meeting-room/](https://sivadass.github.io/react-meeting-room/)
@@ -9,8 +19,13 @@ A simple web app to book meeting rooms inside an office.
 
 ### Google API Key
 1. Goto [Google Cloud Platform Console](https://console.cloud.google.com/cloud-resource-manager) and create a new project.
-2.  Enable the Google Calendar API.
-3.  Copy down the **Google API Key** (GOOGLE_API_KEY) for the project.
+2.  Get inside **APIs**  section and click **Library** Tab.
+3.  Under the Library, search for **Google Calendar API** and click **ENABLE**.
+4.  Under Credentials Tab, click **Create Credentials** button and select API Key on dropdown list.
+5.  A popup will open, which will give you the **API Key** (GOOGLE_API_KEY). 
+6.  Now Create your web client with following settings. (Give your own desired port number and urls for your app).
+
+    ![Setup authorized javascript origins](https://res.cloudinary.com/sivadass/image/upload/v1520732210/screen-shots/setup-authorized-javascript-origins.png)
 
 ### Google Calendar Configuartion
 1.  Goto [Google Calendar](https://calendar.google.com "Google Calendar") and create a new calendar.
