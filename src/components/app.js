@@ -21,8 +21,8 @@ export default class App extends Component {
       this.tick();
     }, 1000);
     setInterval(() => {
-      this.setStatus();
-    }, 5000);
+      this.getEvents();
+    }, 60000);
   }
 
   getEvents(){
@@ -78,6 +78,7 @@ export default class App extends Component {
         this.setState({
           isBusy: true
         })
+        return false;
       } else{
         this.setState({
           isBusy: false
