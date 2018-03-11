@@ -10,7 +10,7 @@ A simple web app to book meeting rooms inside an office.
 ### Google API Key
 1. Goto [Google Cloud Platform Console](https://console.cloud.google.com/cloud-resource-manager) and create a new project.
 2.  Enable the Google Calendar API.
-3.  Copy down the **Google API Key** (GOOGLE_API_KEY) and **Client ID** (CLIENT_ID) for the project.
+3.  Copy down the **Google API Key** (GOOGLE_API_KEY) for the project.
 
 ### Google Calendar Configuartion
 1.  Goto [Google Calendar](https://calendar.google.com "Google Calendar") and create a new calendar.
@@ -27,5 +27,5 @@ A simple web app to book meeting rooms inside an office.
 ### Local Setup
 1.  Clone the repository using `git clone https://github.com/sivadass/react-meeting-room.git`.
 2.  Enter into the project folder and install all dependencies using `npm install`  
-3.  Now open the file `config.js` inside *src* folder and update the **GOOGLE_API_KEY**, **CLIENT_ID** and **CALENDAR_ID** which you have got from above steps.
+3.  Now open the file `config.js` inside *src* folder and update the **GOOGLE_API_KEY** and **CALENDAR_ID** which you have got from above steps.
 4.  Now start the app by `npm start`, the project will load in the browser at `http://localhost:8012/`

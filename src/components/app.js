@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import moment from 'moment'
+import moment from 'moment';
 import axios from 'axios';
-import { GOOGLE_API_KEY, CALENDAR_ID, CLIENT_ID, CLIENT_SECRET } from '../config.js'
+import { GOOGLE_API_KEY, CALENDAR_ID, CLIENT_ID, CLIENT_SECRET } from '../config.js';
+import welcomeThumbNail from '../images/welcome.svg';
+import loadingSpinner from '../images/spinner.svg';
 
 export default class App extends Component {
   constructor(props) {
@@ -9,7 +11,9 @@ export default class App extends Component {
     this.state = {
       time: moment().format("dd, Do MMMM, h:mm A"),
       events: [],
-      isBusy: false
+      isBusy: false,
+      isEmpty: false,
+      isLoading: true
     }
   }
 
@@ -28,16 +32,26 @@ export default class App extends Component {
         'apiKey': GOOGLE_API_KEY
       }).then(function() {
         return gapi.client.request({
-          'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events`,
+          'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${moment().toISOString()}&timeMax=${moment().toISOString()}`,
         })
       }).then( (response) => {
         let events = response.result.items
-        that.setState({
-          events
-        }, ()=>{
-          console.log(that.state.events);
-          that.setStatus();
-        })
+        if(events.length > 0){
+          that.setState({
+            events: events,
+            isLoading: false,
+            isEmpty: false
+          }, ()=>{
+            console.log(that.state.events);
+            that.setStatus();
+          })
+        } else{
+          that.setState({
+            isEmpty: true,
+            isLoading: false
+          })
+        }
+        
       }, function(reason) {
         console.log(reason);
       });
@@ -71,11 +85,22 @@ export default class App extends Component {
 
   render(){    
     const {time, events} = this.state;
+
     let eventsList = events.map(function(event){
       return(
         <a className="list-group-item" href={event.htmlLink} target="_blank" key={event.id}>{event.summary} <span className="badge">{moment(event.start.dateTime).format('h:mm a')}, {moment(event.end.dateTime).diff(moment(event.start.dateTime), 'minutes')} minutes, {moment(event.start.dateTime).format('MMMM Do')} </span></a>
       )
     });
+
+    let emptyState = <div className="empty">
+      <img src={welcomeThumbNail} alt="Welcome"/>
+      <h3>No meetings are scheduled for the day. Create one by clicking the blue button below.</h3>
+    </div>
+
+    let loadingState = <div className="loading">
+      <img src={loadingSpinner} alt="Loading"/>
+    </div>
+
     return(
       <div className="container">
         <div className={this.state.isBusy ? "current-status busy" : "current-status open"}>
@@ -87,7 +112,9 @@ export default class App extends Component {
           </div>
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
-            {eventsList.length > 0 && eventsList}
+            {this.state.isLoading && loadingState}
+            {events.length > 0 && eventsList}
+            {this.state.isEmpty && emptyState}
           </div>
           <a className="primary-cta" href="https://calendar.google.com/calendar?cid=c3FtMnVkaTFhZGY2ZHM3Z2o5aDgxdHVldDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank">+</a>
         </div>

@@ -31,7 +31,8 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpg)$/,
-        loader: "file-loader"
+        loader: "file-loader",
+        options: { useRelativePath: true }
       }
     ]
   },
