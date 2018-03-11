@@ -98,7 +98,7 @@ export default class App extends Component {
     </div>
 
     let loadingState = <div className="loading">
-      <img src={loadingSpinner} alt="Loading"/>
+      <img src={loadingSpinner} alt="Loading.."/>
     </div>
 
     return(
