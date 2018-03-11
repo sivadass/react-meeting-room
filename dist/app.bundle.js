@@ -10302,14 +10302,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _config = __webpack_require__(110);
 
-var _welcome = __webpack_require__(128);
-
-var _welcome2 = _interopRequireDefault(_welcome);
-
-var _spinner = __webpack_require__(127);
-
-var _spinner2 = _interopRequireDefault(_spinner);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10432,7 +10424,7 @@ var App = function (_Component) {
       var emptyState = _react2.default.createElement(
         'div',
         { className: 'empty' },
-        _react2.default.createElement('img', { src: _welcome2.default, alt: 'Welcome' }),
+        _react2.default.createElement('img', { src: 'dist/welcome.svg', alt: 'Welcome' }),
         _react2.default.createElement(
           'h3',
           null,
@@ -10443,7 +10435,7 @@ var App = function (_Component) {
       var loadingState = _react2.default.createElement(
         'div',
         { className: 'loading' },
-        _react2.default.createElement('img', { src: _spinner2.default, alt: 'Loading..' })
+        _react2.default.createElement('img', { src: 'dist/spinner.svg', alt: 'Loading..' })
       );
 
       return _react2.default.createElement(
@@ -12986,18 +12978,8 @@ if (performance.now) {
 module.exports = performanceNow;
 
 /***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "../images/91e97e42450023e988f264a6d091f3f3.svg";
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "../images/09487061f5ef44e30d639c4a98cf4e2e.svg";
-
-/***/ }),
+/* 127 */,
+/* 128 */,
 /* 129 */
 /***/ (function(module, exports) {
 

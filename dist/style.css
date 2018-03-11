@@ -2,7 +2,7 @@
   font-family: 'Inter UI';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/19ef785020a451a0f750e1a2eb60b460.woff2) format("woff2"), url(../fonts/de135c92662d8a15c63f151e564a7c05.woff) format("woff"), url(../fonts/de5b543da1d4b52c9ab5454b518bb02f.ttf) format("ttf"); }
+  src: url(19ef785020a451a0f750e1a2eb60b460.woff2) format("woff2"), url(de135c92662d8a15c63f151e564a7c05.woff) format("woff"), url(de5b543da1d4b52c9ab5454b518bb02f.ttf) format("ttf"); }
 
 * {
   margin: 0;

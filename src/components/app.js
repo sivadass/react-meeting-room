@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import moment from 'moment';
 import axios from 'axios';
 import { GOOGLE_API_KEY, CALENDAR_ID, CLIENT_ID, CLIENT_SECRET } from '../config.js';
-import welcomeThumbNail from '../images/welcome.svg';
-import loadingSpinner from '../images/spinner.svg';
 
 export default class App extends Component {
   constructor(props) {
@@ -93,12 +91,12 @@ export default class App extends Component {
     });
 
     let emptyState = <div className="empty">
-      <img src={welcomeThumbNail} alt="Welcome"/>
+      <img src="dist/welcome.svg" alt="Welcome"/>
       <h3>No meetings are scheduled for the day. Create one by clicking the blue button below.</h3>
     </div>
 
     let loadingState = <div className="loading">
-      <img src={loadingSpinner} alt="Loading.."/>
+      <img src="dist/spinner.svg" alt="Loading.."/>
     </div>
 
     return(
