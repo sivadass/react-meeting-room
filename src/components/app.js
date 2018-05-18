@@ -140,7 +140,7 @@ export default class App extends Component {
       <div className="empty">
         <img src="dist/welcome.svg" alt="Welcome" />
         <h3>
-          No meetings are scheduled for the day. Create one by clicking the blue
+          No meetings are scheduled for the day. Create one by clicking the
           button below.
         </h3>
       </div>
@@ -148,7 +148,7 @@ export default class App extends Component {
 
     let loadingState = (
       <div className="loading">
-        <img src="dist/spinner.svg" alt="Loading.." />
+        <img src="dist/spinner.svg" alt="Loading..." />
       </div>
     );
 
