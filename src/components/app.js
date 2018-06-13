@@ -53,7 +53,6 @@ export default class App extends Component {
                 moment(a.start.dateTime).format("YYYYMMDD")
               );
             });
-            console.log(sortedEvents);
             if (events.length > 0) {
               that.setState(
                 {
@@ -62,7 +61,6 @@ export default class App extends Component {
                   isEmpty: false
                 },
                 () => {
-                  console.log(that.state.events);
                   that.setStatus();
                 }
               );
@@ -93,7 +91,6 @@ export default class App extends Component {
     let events = this.state.events;
     for (var e = 0; e < events.length; e++) {
       var eventItem = events[e];
-      console.log(eventItem.start.dateTime);
       if (
         moment(now).isBetween(
           moment(eventItem.start.dateTime),

@@ -10340,7 +10340,6 @@ var App = function (_Component) {
       var events = _this.state.events;
       for (var e = 0; e < events.length; e++) {
         var eventItem = events[e];
-        console.log(eventItem.start.dateTime);
         if ((0, _moment2.default)(now).isBetween((0, _moment2.default)(eventItem.start.dateTime), (0, _moment2.default)(eventItem.end.dateTime))) {
           _this.setState({
             isBusy: true
@@ -10380,14 +10379,12 @@ var App = function (_Component) {
           var sortedEvents = events.sort(function (a, b) {
             return (0, _moment2.default)(b.start.dateTime).format("YYYYMMDD") - (0, _moment2.default)(a.start.dateTime).format("YYYYMMDD");
           });
-          console.log(sortedEvents);
           if (events.length > 0) {
             that.setState({
               events: sortedEvents,
               isLoading: false,
               isEmpty: false
             }, function () {
-              console.log(that.state.events);
               that.setStatus();
             });
           } else {
@@ -10443,14 +10440,14 @@ var App = function (_Component) {
         _react2.default.createElement(
           "h3",
           null,
-          "No meetings are scheduled for the day. Create one by clicking the blue button below."
+          "No meetings are scheduled for the day. Create one by clicking the button below."
         )
       );
 
       var loadingState = _react2.default.createElement(
         "div",
         { className: "loading" },
-        _react2.default.createElement("img", { src: "dist/spinner.svg", alt: "Loading.." })
+        _react2.default.createElement("img", { src: "dist/spinner.svg", alt: "Loading..." })
       );
 
       return _react2.default.createElement(
