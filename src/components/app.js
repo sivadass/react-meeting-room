@@ -14,7 +14,7 @@ export default class App extends Component {
     this.state = {
       time: moment().format("dd, Do MMMM, h:mm A"),
       events: [],
-      isBusy: true,
+      isBusy: false,
       isEmpty: false,
       isLoading: true
     };
@@ -66,6 +66,7 @@ export default class App extends Component {
               );
             } else {
               that.setState({
+                isBusy: false,
                 isEmpty: true,
                 isLoading: false
               });
