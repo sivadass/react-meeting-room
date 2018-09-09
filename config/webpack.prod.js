@@ -15,7 +15,7 @@ module.exports = merge.smart(webpackCommon, {
   output: {
     filename: "main.[chunkhash].js",
     path: path.resolve(__dirname, "../docs"),
-    publicPath: "/"
+    publicPath: "/react-meeting-room/"
   },
   mode: "production",
   optimization: {
