@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
-import axios from "axios";
-import {
-  GOOGLE_API_KEY,
-  CALENDAR_ID,
-  CLIENT_ID,
-  CLIENT_SECRET
-} from "../config.js";
+import welcomeImage from "../images/welcome.svg";
+import spinner from "../images/spinner.svg";
+import { GOOGLE_API_KEY, CALENDAR_ID } from "../config.js";
 
 export default class App extends Component {
   constructor(props) {
@@ -136,7 +132,7 @@ export default class App extends Component {
 
     let emptyState = (
       <div className="empty">
-        <img src="dist/welcome.svg" alt="Welcome" />
+        <img src={welcomeImage} alt="Welcome" />
         <h3>
           No meetings are scheduled for the day. Create one by clicking the
           button below.
@@ -146,7 +142,7 @@ export default class App extends Component {
 
     let loadingState = (
       <div className="loading">
-        <img src="dist/spinner.svg" alt="Loading..." />
+        <img src={spinner} alt="Loading..." />
       </div>
     );
 
